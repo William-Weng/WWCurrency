@@ -8,43 +8,43 @@
 ![SPM](https://img.shields.io/badge/SPM-supported-brightgreen.svg)
 [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/)
 
-ISO 4217 貨幣標準資料管理工具，提供完整的貨幣代碼、名稱與數字代碼查詢功能。
+ISO 4217 currency standard data management tool, providing complete currency codes, names, and numeric code lookup functionality.
 
-## 功能特色
+## Features
 
-- ✅ 完整收錄 128 種 ISO 4217 貨幣標準
-- ✅ 支援字母代碼（Alpha-3）與數字代碼（Numeric）
-- ✅ 提供中文貨幣名稱
-- ✅ 型別安全的 `ISO_4217` enum
-- ✅ 符合 `Identifiable` 與 `CaseIterable` 協定
-- ✅ 單例設計，方便全域存取
+- ✅ Complete coverage of 128 ISO 4217 currencies
+- ✅ Support for Alpha-3 and Numeric codes
+- ✅ Chinese currency names included
+- ✅ Type-safe `ISO_4217` enum
+- ✅ Conforms to `Identifiable` and `CaseIterable` protocols
+- ✅ Singleton design for easy global access
 
-## 安裝
+## Installation
 
-將此套件加入你的 Xcode 專案：
+Add this package to your Xcode project:
 
-1. 在 Xcode 中選擇 **File > Add Package Dependencies**
-2. 輸入套件倉庫 URL
-3. 選擇版本範圍
+1. In Xcode, select **File > Add Package Dependencies**
+2. Enter the package repository URL
+3. Select version range
 
-## 使用方式
+## Usage
 
-### 基本使用
+### Basic Usage
 
 ```swift
 import WWCurrency
 
-// 取得單例
+// Get singleton instance
 let currency = WWCurrency.shared
 
-// 取得所有貨幣列表
+// Get all currencies
 let allCurrencies = currency.values
 
-// 取得所有貨幣代碼（含 enum 類型）
+// Get all currency codes (with enum type)
 let allCodes = currency.codes
 ```
 
-### 在 SwiftUI 中使用
+### Using in SwiftUI
 
 ```swift
 import SwiftUI
@@ -73,80 +73,80 @@ struct CurrencyPickerView: View {
 }
 ```
 
-### 使用 ISO_4217 enum
+### Using ISO_4217 Enum
 
 ```swift
-// 枚舉所有貨幣
+// Iterate through all currencies
 for code in ISO_4217.allCases {
     print("\(code.rawValue): \(code)")
 }
 
-// 從字串轉換
+// Convert from string
 if let twd = ISO_4217(rawValue: "TWD") {
-    print("找到貨幣：\(twd)")
+    print("Found currency: \(twd)")
 }
 
-// 在 WWCurrencyCode 中使用
+// Use with WWCurrencyCode
 let codes = WWCurrency.shared.codes
 for code in codes {
     print("\(code.id) - \(code.code): \(code.name)")
 }
 ```
 
-## 資料結構
+## Data Structures
 
 ### WWCurrency
 
-主類別，負責載入與解析 ISO 4217 資料。
+Main class responsible for loading and parsing ISO 4217 data.
 
-| 屬性 | 類型 | 說明 |
-|------|------|------|
-| `shared` | `WWCurrency` | 單例實例 |
-| `values` | `[WWCurrencyValue]` | 所有貨幣值陣列 |
-| `codes` | `[WWCurrencyCode]` | 所有貨幣代碼陣列（含 enum） |
+| Property | Type | Description |
+|----------|------|-------------|
+| `shared` | `WWCurrency` | Singleton instance |
+| `values` | `[WWCurrencyValue]` | Array of all currency values |
+| `codes` | `[WWCurrencyCode]` | Array of all currency codes (with enum) |
 
 ### WWCurrencyValue
 
-表示單筆貨幣資料。
+Represents a single currency entry.
 
 ```swift
 public struct WWCurrencyValue: Identifiable {
-    public let id: Int      // 數字代碼（如 901）
-    public let code: String // 字母代碼（如 "TWD"）
-    public let name: String // 中文名稱（如 "新台幣"）
+    public let id: Int      // Numeric code (e.g., 901)
+    public let code: String // Alpha-3 code (e.g., "TWD")
+    public let name: String // Chinese name (e.g., "新台幣")
 }
 ```
 
 ### WWCurrencyCode
 
-將貨幣對應到 `ISO_4217` enum 類型。
+Maps currency to `ISO_4217` enum type.
 
 ```swift
 public struct WWCurrencyCode: Identifiable {
-    public let id: ISO_4217   // enum 類型
-    public let code: String   // 字母代碼
-    public let name: String   // 中文名稱
+    public let id: ISO_4217   // Enum type
+    public let code: String   // Alpha-3 code
+    public let name: String   // Chinese name
 }
 ```
 
 ### ISO_4217
 
-型別安全的貨幣代碼 enum。
+Type-safe currency code enum.
 
 ```swift
 enum ISO_4217: String, CaseIterable {
     case AED
     case AFN
     case ALL
-    // ... 共 128 種
+    // ... 128 total
     case TWD
     case USD
 }
 ```
 
-## JSON 格式
+## JSON Format
 
-資源檔案 `ISO_4217.json` 格式如下：
+Resource file `ISO_4217.json` format:
 
 ```json
 {
@@ -165,7 +165,7 @@ enum ISO_4217: String, CaseIterable {
 }
 ```
 
-## 參考資料
+## References
 
-- [ISO 4217 標準](https://www.iso.org/iso-4217-currency-codes.html)
-- [ISO 3166-1 國家代碼](https://www.iso.org/iso-3166-country-codes.html)
+- [ISO 4217 Standard](https://www.iso.org/iso-4217-currency-codes.html)
+- [ISO 3166-1 Country Codes](https://www.iso.org/iso-3166-country-codes.html)
