@@ -1,0 +1,15 @@
+{
+  "originHash" : "79a6fa19413f62e2a12190daf9b02c92e6ed6b35e8359687db71678a7b945c89",
+  "pins" : [
+    {
+      "identity" : "wwcurrency",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWCurrency",
+      "state" : {
+        "revision" : "f6f1224fa7f090b643f1a2cf557725cdee2c57be",
+        "version" : "0.5.0"
+      }
+    }
+  ],
+  "version" : 3
+}

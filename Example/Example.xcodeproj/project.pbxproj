@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		81C56C4C3046BD5C001A4BA4 /* WWCurrency in Frameworks */ = {isa = PBXBuildFile; productRef = 81C56C4B3046BD5C001A4BA4 /* WWCurrency */; };
 		81C56C773046D547001A4BA4 /* WWCurrency in Frameworks */ = {isa = PBXBuildFile; productRef = 81C56C763046D547001A4BA4 /* WWCurrency */; };
+		81C56C7A3046D7AB001A4BA4 /* WWCurrency in Frameworks */ = {isa = PBXBuildFile; productRef = 81C56C793046D7AB001A4BA4 /* WWCurrency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81C56C4C3046BD5C001A4BA4 /* WWCurrency in Frameworks */,
+				81C56C7A3046D7AB001A4BA4 /* WWCurrency in Frameworks */,
 				81C56C773046D547001A4BA4 /* WWCurrency in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +89,7 @@
 			packageProductDependencies = (
 				81C56C4B3046BD5C001A4BA4 /* WWCurrency */,
 				81C56C763046D547001A4BA4 /* WWCurrency */,
+				81C56C793046D7AB001A4BA4 /* WWCurrency */,
 			);
 			productName = Example;
 			productReference = 817EE1FE2EB1FA050036B57C /* Example.app */;
@@ -117,7 +120,7 @@
 			mainGroup = 817EE1F52EB1FA050036B57C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				81C56C753046D547001A4BA4 /* XCLocalSwiftPackageReference "../../@WWCurrency" */,
+				81C56C783046D7AB001A4BA4 /* XCRemoteSwiftPackageReference "WWCurrency" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 817EE1FF2EB1FA050036B57C /* Products */;
@@ -362,12 +365,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		81C56C753046D547001A4BA4 /* XCLocalSwiftPackageReference "../../@WWCurrency" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../@WWCurrency";
+/* Begin XCRemoteSwiftPackageReference section */
+		81C56C783046D7AB001A4BA4 /* XCRemoteSwiftPackageReference "WWCurrency" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/William-Weng/WWCurrency";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.5.0;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		81C56C4B3046BD5C001A4BA4 /* WWCurrency */ = {
@@ -376,6 +383,11 @@
 		};
 		81C56C763046D547001A4BA4 /* WWCurrency */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = WWCurrency;
+		};
+		81C56C793046D7AB001A4BA4 /* WWCurrency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81C56C783046D7AB001A4BA4 /* XCRemoteSwiftPackageReference "WWCurrency" */;
 			productName = WWCurrency;
 		};
 /* End XCSwiftPackageProductDependency section */
