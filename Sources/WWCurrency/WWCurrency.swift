@@ -22,9 +22,11 @@ public class WWCurrency {
     
     /// 初始化時自動載入並解析資源檔案
     init() {
+        
         let jsonObject = parseJsonObject(resource: resource)
+        
         values = parseArray(jsonObject: jsonObject)
-        codes = parseCodes()
+        codes = parseCodes(values: values)
     }
 }
 
@@ -72,8 +74,8 @@ private extension WWCurrency {
     
     /// 將貨幣值轉換為包含 enum 類型的代碼陣列
     /// - Returns: 僅包含有效 ISO_4217 enum 的代碼陣列
-    func parseCodes() -> [WWCurrencyCode] {
-        
+    func parseCodes(values: [WWCurrencyValue]) -> [WWCurrencyCode] {
+                
         var codes: [WWCurrencyCode] = []
         
         values.forEach { value in
@@ -81,7 +83,7 @@ private extension WWCurrency {
                 codes.append(.init(id: id, code: value.code, name: value.name))
             }
         }
-
+        
         return codes
     }
 }

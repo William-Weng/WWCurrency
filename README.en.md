@@ -50,17 +50,21 @@ let allCodes = currency.codes
 import SwiftUI
 import WWCurrency
 
-struct CurrencyPickerView: View {
-    let currencies = WWCurrency.shared.values
+struct ContentView: View {
     
-    @State private var selectedCurrency: WWCurrencyValue?
+    let codes = WWCurrency.shared.codes
+    
+    @State private var selectedCurrency: WWCurrencyCode?
     
     var body: some View {
-        List(currencies) { currency in
+        
+        List(codes) { currency in
             Button {
                 selectedCurrency = currency
             } label: {
                 HStack {
+                    Text(currency.id.flag)
+                        .fontWeight(.semibold)
                     Text(currency.code)
                         .fontWeight(.semibold)
                     Spacer()
@@ -70,6 +74,10 @@ struct CurrencyPickerView: View {
             }
         }
     }
+}
+
+#Preview {
+    ContentView()
 }
 ```
 
@@ -141,27 +149,6 @@ enum ISO_4217: String, CaseIterable {
     // ... 128 total
     case TWD
     case USD
-}
-```
-
-## JSON Format
-
-Resource file `ISO_4217.json` format:
-
-```json
-{
-  "ISO_4217": {
-    "TWD": {
-      "ISO_3166-1": "TW",
-      "ID": 901,
-      "NAME": "新台幣"
-    },
-    "USD": {
-      "ISO_3166-1": "US",
-      "ID": 840,
-      "NAME": "美元"
-    }
-  }
 }
 ```
 

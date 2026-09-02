@@ -5,7 +5,7 @@
 //  Created by William.Weng on 2026/9/1.
 //
 
-// 貨幣 ISO 4217 代碼
+/// 貨幣 ISO 4217 代碼
 public enum ISO_4217: String, CaseIterable {
     case AED
     case AFN
@@ -31,6 +31,7 @@ public enum ISO_4217: String, CaseIterable {
     case CDF
     case CHF
     case CLP
+    case CNY
     case COP
     case CRC
     case CUP
@@ -42,6 +43,7 @@ public enum ISO_4217: String, CaseIterable {
     case EGP
     case ERN
     case ETB
+    case EUR
     case FJD
     case FKP
     case GEL
@@ -120,9 +122,11 @@ public enum ISO_4217: String, CaseIterable {
     case TOP
     case TRY
     case TTD
+    case TWD
     case TZS
     case UAH
     case UGX
+    case USD
     case UYI
     case UYU
     case UYW
@@ -135,4 +139,14 @@ public enum ISO_4217: String, CaseIterable {
     case YER
     case ZAR
     case ZMW
+}
+
+/// 為 ISO_4217 貨幣代碼列舉新增一個擴充功能
+public extension ISO_4217 {
+    
+    /// 動態計算屬性：將貨幣代碼轉換為對應的國旗 Emoji 字串
+    /// 例如：.usd -> "🇺🇸", .twd -> "🇹🇼"
+    var flag: String {
+        self.rawValue.prefix(2).uppercased().flag
+    }
 }
