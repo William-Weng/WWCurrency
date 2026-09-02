@@ -10,9 +10,9 @@
 
 ISO 4217 currency standard data management tool, providing complete currency codes, names, and numeric code lookup functionality.
 
-<img height="720" alt="Example" src="https://github.com/user-attachments/assets/623e0f3c-5332-4712-aa66-e8b83c86a05a" />
+<img height="720" alt="Example" src="https://github.com/user-attachments/assets/3e803b48-4d07-4c87-8b5c-cc05bd816ac0" />
 
-## Features
+## [Features](https://peterpanswift.github.io/iphone-bezels/)
 
 - ✅ Complete coverage of 128 ISO 4217 currencies
 - ✅ Support for Alpha-3 and Numeric codes

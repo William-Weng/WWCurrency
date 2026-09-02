@@ -10,9 +10,9 @@
 
 ISO 4217 貨幣標準資料管理工具，提供完整的貨幣代碼、名稱與數字代碼查詢功能。
 
-<img height="720" alt="Example" src="https://github.com/user-attachments/assets/623e0f3c-5332-4712-aa66-e8b83c86a05a" />
+<img height="720" alt="Example" src="https://github.com/user-attachments/assets/3e803b48-4d07-4c87-8b5c-cc05bd816ac0" />
 
-## 功能特色
+## [功能特色](https://peterpanswift.github.io/iphone-bezels/)
 
 - ✅ 完整收錄 128 種 ISO 4217 貨幣標準
 - ✅ 支援字母代碼（Alpha-3）與數字代碼（Numeric）
