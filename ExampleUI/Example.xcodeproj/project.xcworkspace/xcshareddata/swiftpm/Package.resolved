@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWCurrency",
       "state" : {
-        "revision" : "f6f1224fa7f090b643f1a2cf557725cdee2c57be",
-        "version" : "0.5.0"
+        "revision" : "914f6fa3a4eeaf7210e3b625eafaf735c83dca29",
+        "version" : "0.5.1"
       }
     }
   ],

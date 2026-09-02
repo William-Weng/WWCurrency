@@ -353,7 +353,7 @@
 			repositoryURL = "https://github.com/William-Weng/WWCurrency";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.5.0;
+				minimumVersion = 0.5.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
